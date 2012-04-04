@@ -120,6 +120,8 @@ struct Waypoint {
 
   /** Name of waypoint */
   tstring name;
+  /** Code of waypoint */
+  tstring code;
   /** Additional comment text for waypoint */
   tstring comment;
   /** Airfield or additional (long) details */
