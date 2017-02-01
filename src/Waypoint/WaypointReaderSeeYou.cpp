@@ -164,6 +164,7 @@ WaypointReaderSeeYou::ParseLine(const TCHAR* line, Waypoints &waypoints)
 {
   enum {
     iName = 0,
+    iCode = 1,
     iLatitude = 3,
     iLongitude = 4,
     iElevation = 5,
@@ -242,6 +243,10 @@ WaypointReaderSeeYou::ParseLine(const TCHAR* line, Waypoints &waypoints)
   if (*params[iName] == _T('\0'))
     return false;
   new_waypoint.name = params[iName];
+
+  // Code
+  if (*params[iCode] != _T('\0'))
+	new_waypoint.code = params[iCode];
 
   // Elevation (e.g. 458.0m)
   /// @todo configurable behaviour
