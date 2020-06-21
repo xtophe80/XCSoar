@@ -89,7 +89,13 @@ Draw(Canvas &canvas, PixelRect rc,
   row_renderer.DrawSecondRow(canvas, rc, buffer);
 
   // Draw waypoint name
-  row_renderer.DrawFirstRow(canvas, rc, waypoint.name.c_str());
+
+  if (!waypoint.code.empty()) {
+    buffer.Format(_T("%s %s"),waypoint.code.c_str(), waypoint.name.c_str());
+  } else {
+   buffer.Format(_T("%s"),waypoint.name.c_str());
+  }
+  row_renderer.DrawFirstRow(canvas, rc, buffer);
 }
 
 void
