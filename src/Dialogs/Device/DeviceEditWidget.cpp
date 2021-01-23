@@ -275,6 +275,7 @@ FillTCPPorts(DataFieldEnum &dfe) noexcept
   dfe.addEnumText(_T("8880"), 8880);
   dfe.addEnumText(_T("8881"), 8881);
   dfe.addEnumText(_T("8882"), 8882);
+  dfe.addEnumText(_T("4000"), 4000);
 }
 
 static void
