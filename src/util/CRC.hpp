@@ -35,7 +35,8 @@ gcc_const
 static inline uint16_t
 UpdateCRC16CCITT(uint8_t octet, uint16_t crc)
 {
-  return (crc << 8) ^ crc16ccitt_table[(crc >> 8) ^ octet];
+  //return (crc << 8) ^ crc16ccitt_table[(crc >> 8) ^ octet];
+  return (crc << 8) ^ crc16ccitt_table[(crc >> 8)] ^ octet;
 }
 
 gcc_pure
